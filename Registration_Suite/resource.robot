@@ -102,3 +102,4 @@ Wait Until AjaxComplete
         Log     ${IS AJAX COMPLETE}
         Run Keyword If      ${IS AJAX COMPLETE}==True    Exit For Loop
     END
+    Execute Async JavaScript	var callback = arguments[arguments.length - 1]; window.setTimeout(callback, 2000)
