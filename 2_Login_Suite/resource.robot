@@ -8,7 +8,7 @@ Library         SeleniumLibrary
 *** Variables ***
 ${SERVER}               localhost:3000
 ${BROWSER}              chrome
-${DELAY}                0.2
+${DELAY}                0.1
 ${LOGIN URL}            http://${SERVER}/
 ${IS AJAX COMPLETE}     ${EMPTY}
 

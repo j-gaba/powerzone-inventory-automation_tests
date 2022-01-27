@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation   Robot file belonging to the Login Test Suite with test cases
-...             for valid and invalid logins for the Delivery Manager Role
+...             for valid and invalid logins for the Administrator Role
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary
 Resource        resource.robot
 
 *** Test Cases ***
-[Transaction Cashier] Invalid Login
+[Administrator] Invalid Login
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
@@ -23,7 +23,7 @@ Resource        resource.robot
     # reload page
     Reload Page
     # input valid username with invalid password
-    Input Username  ${TC USERNAME}
+    Input Username  ${ADMIN USERNAME}
     Input Password  ${INVALID PASSWORD}
     Confirm Log In
     # Error message is "Invalid credentials"
@@ -32,30 +32,30 @@ Resource        resource.robot
     # close browser
     [Teardown]    Close Browser
 
-[Transaction Cashier] Valid Login
+[Administrator] Valid Login
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
     # input invalid username with any password
-    Input Username  ${TC USERNAME}
-    Input Password  ${VALID PASSWORD}
+    Input Username  ${ADMIN USERNAME}
+    Input Password  ${ADMIN PASSWORD}
     Confirm Log In
     # should be open in home page
     Home Page Should Be Open
     # close browser
     [Teardown]    Close Browser
 
-[Transaction Cashier] Role-Specific Feature Presence
+[Administrator] Role-Specific Feature Presence
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
     # input invalid username with any password
-    Input Username  ${TC USERNAME}
-    Input Password  ${VALID PASSWORD}
+    Input Username  ${ADMIN USERNAME}
+    Input Password  ${ADMIN PASSWORD}
     Confirm Log In
     # should be open in home page
     Home Page Should Be Open
@@ -80,7 +80,7 @@ Resource        resource.robot
     Deliveries Page Should Be Open
     Wait Until Ajax Complete
     # verify role access in page
-    Page Should Not Contain    EDIT
+    Page Should Contain    EDIT
     Page Should Contain    MORE INFO
     # return to home page using home button
     Click Element   link:Home
@@ -93,15 +93,22 @@ Resource        resource.robot
     Inventory Page Should Be Open
     Wait Until Ajax Complete
     # verify role access in page
-    Page Should Not Contain    + Add Stock
-    Page Should Not Contain    EDIT
+    Page Should Contain    + Add Stock
+    Page Should Contain    EDIT
     Page Should Contain    MORE INFO
     # return to home page using powerzone logo
     Click Element   link:POWERZONE
     # should be open in home page
     Home Page Should Be Open
     Wait Until Ajax Complete
-    Element Text Should Not Be    edit-price-btn    Edit
+    Element Text Should Be    edit-price-btn    Edit
+    # go to accounts page
+    Click Element   link:Account
+    Wait Until Ajax Complete
+    Page Should Contain     STATUS
+    Page Should Contain     EDIT
+    Page Should Contain     DELETE
+    
 
     # close browser
     [Teardown]    Close Browser

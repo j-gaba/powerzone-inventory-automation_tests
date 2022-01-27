@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation   Robot file belonging to the Login Test Suite with test cases
-...             for valid and invalid logins for the Delivery Manager Role
+...             for valid and invalid logins for the Transaction Cashier Role
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary
 Resource        resource.robot
 
 *** Test Cases ***
-[Inventory Manager] Invalid Login
+[Transaction Cashier] Invalid Login
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
@@ -23,7 +23,7 @@ Resource        resource.robot
     # reload page
     Reload Page
     # input valid username with invalid password
-    Input Username  ${IM USERNAME}
+    Input Username  ${TC USERNAME}
     Input Password  ${INVALID PASSWORD}
     Confirm Log In
     # Error message is "Invalid credentials"
@@ -32,14 +32,14 @@ Resource        resource.robot
     # close browser
     [Teardown]    Close Browser
 
-[Inventory Manager] Valid Login
+[Transaction Cashier] Valid Login
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
     # input invalid username with any password
-    Input Username  ${IM USERNAME}
+    Input Username  ${TC USERNAME}
     Input Password  ${VALID PASSWORD}
     Confirm Log In
     # should be open in home page
@@ -47,14 +47,14 @@ Resource        resource.robot
     # close browser
     [Teardown]    Close Browser
 
-[Inventory Manager] Role-Specific Feature Presence
+[Transaction Cashier] Role-Specific Feature Presence
     # open browser, set window size, check if in login page
     Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
     # input invalid username with any password
-    Input Username  ${IM USERNAME}
+    Input Username  ${TC USERNAME}
     Input Password  ${VALID PASSWORD}
     Confirm Log In
     # should be open in home page
@@ -66,8 +66,8 @@ Resource        resource.robot
     Transactions Page Should Be Open
     Wait Until Ajax Complete
     # verify role access in page
-    Page Should Not Contain    + Add Transaction
-    Page Should Not Contain    EDIT
+    Page Should Contain    + Add Transaction
+    Page Should Contain    EDIT
     Page Should Contain    MORE INFO
     # return to home page using powerzone logo
     Click Element   link:POWERZONE
@@ -93,15 +93,15 @@ Resource        resource.robot
     Inventory Page Should Be Open
     Wait Until Ajax Complete
     # verify role access in page
-    Page Should Contain    + Add Stock
+    Page Should Not Contain    + Add Stock
+    Page Should Not Contain    EDIT
     Page Should Contain    MORE INFO
-    Page Should Contain    EDIT
     # return to home page using powerzone logo
     Click Element   link:POWERZONE
     # should be open in home page
     Home Page Should Be Open
     Wait Until Ajax Complete
-    Element Text Should Be    edit-price-btn    Edit
+    Element Text Should Not Be    edit-price-btn    Edit
 
     # close browser
     [Teardown]    Close Browser
