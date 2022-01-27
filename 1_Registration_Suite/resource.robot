@@ -82,6 +82,14 @@ Input Password
     [Arguments]    ${pass}
     Input Text    signup-password    ${pass}
 
+Input Login Username
+    [Arguments]    ${username}
+    Input Text    login-username    ${username}
+
+Input Login Password
+    [Arguments]    ${pass}
+    Input Text    login-password    ${pass}
+
 Input Confirm Password
     [Arguments]    ${cpass}
     Input Text    signup-confirm-password    ${cpass}
@@ -91,6 +99,12 @@ Go To Sign Up
 
 Confirm Sign Up
     Click Button    signup-btn
+
+Confirm Log In
+    Click Button    login-btn
+
+Go Back To Log In
+    Click Button    go-back-to-login-btn
 
 Success Page Should Be Open
     Page Should Contain Element     go-back-to-login-btn

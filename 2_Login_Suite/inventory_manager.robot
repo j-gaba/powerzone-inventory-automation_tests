@@ -29,12 +29,10 @@ Resource        resource.robot
     # Error message is "Invalid credentials"
     Wait Until Element Is Visible   invalid-login
     Element Text Should Be    invalid-login    Invalid credentials
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Inventory Manager] Valid Login
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
@@ -44,19 +42,8 @@ Resource        resource.robot
     Confirm Log In
     # should be open in home page
     Home Page Should Be Open
-    # close browser
-    [Teardown]    Close Browser
 
 [Inventory Manager] Role-Specific Feature Presence
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # should be open in log in page
-    Login Page Should Be Open
-    Wait Until Ajax Complete
-    # input invalid username with any password
-    Input Username  ${IM USERNAME}
-    Input Password  ${VALID PASSWORD}
-    Confirm Log In
     # should be open in home page
     Home Page Should Be Open
 

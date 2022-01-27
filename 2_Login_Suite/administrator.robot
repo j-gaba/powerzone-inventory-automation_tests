@@ -29,12 +29,10 @@ Resource        resource.robot
     # Error message is "Invalid credentials"
     Wait Until Element Is Visible   invalid-login
     Element Text Should Be    invalid-login    Invalid credentials
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Administrator] Valid Login
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
     # should be open in log in page
     Login Page Should Be Open
     Wait Until Ajax Complete
@@ -44,19 +42,8 @@ Resource        resource.robot
     Confirm Log In
     # should be open in home page
     Home Page Should Be Open
-    # close browser
-    [Teardown]    Close Browser
 
 [Administrator] Role-Specific Feature Presence
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # should be open in log in page
-    Login Page Should Be Open
-    Wait Until Ajax Complete
-    # input invalid username with any password
-    Input Username  ${ADMIN USERNAME}
-    Input Password  ${ADMIN PASSWORD}
-    Confirm Log In
     # should be open in home page
     Home Page Should Be Open
 
@@ -105,10 +92,10 @@ Resource        resource.robot
     # go to accounts page
     Click Element   link:Account
     Wait Until Ajax Complete
-    Page Should Contain     STATUS
-    Page Should Contain     EDIT
-    Page Should Contain     DELETE
-    
+    # should be at manage accounts page
+    Manage Accounts Page Should Be Open
+    # accept accounts populated using the registration test suite
+    Set First Three Accounts To Accepted
 
     # close browser
     [Teardown]    Close Browser

@@ -74,3 +74,16 @@ Wait Until Ajax Complete
         Log     ${IS AJAX COMPLETE}
         Run Keyword If      ${IS AJAX COMPLETE}==True    Exit For Loop
     END
+
+Manage Accounts Page Should Be Open
+    Page Should Contain     STATUS
+    Page Should Contain     EDIT
+    Page Should Contain     DELETE
+
+Set First Three Accounts To Accepted
+    Click Element   xpath=/html/body/div[5]/table/tbody/tr[1]/td[4]/button/img
+    Click Element   accept-account-btn
+    Click Element   xpath=/html/body/div[5]/table/tbody/tr[2]/td[4]/button/img
+    Click Element   accept-account-btn
+    Click Element   xpath=/html/body/div[5]/table/tbody/tr[3]/td[4]/button/img
+    Click Element   accept-account-btn

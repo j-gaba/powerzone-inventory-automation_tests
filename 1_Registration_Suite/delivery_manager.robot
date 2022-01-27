@@ -28,16 +28,12 @@ Resource        resource.robot
     # Error message is "Email has been taken"
     Wait Until Element Is Visible   invalid-unique-email
     Element Text Should Be    invalid-unique-email    Email has been taken
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
     #invalid-blank-email
 
 [Delivery Manager] Username Already Taken
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
@@ -55,14 +51,10 @@ Resource        resource.robot
     # Error message is "Username has been taken"
     Wait Until Element Is Visible   invalid-unique-username
     Element Text Should Be    invalid-unique-username    Username has been taken
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Delivery Manager] Username Does Not Follow the Specified String Format
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
@@ -89,14 +81,10 @@ Resource        resource.robot
     # Error message is "Username should not consist of special characters only"
     Wait Until Element Is Visible   invalid-char-username
     Element Text Should Be    invalid-char-username    Username should not consist of special characters only
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Delivery Manager] Password Does Not Follow the Specified String Length
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
@@ -115,15 +103,10 @@ Resource        resource.robot
     # Error message is "Should have at least 12 characters"
     Wait Until Element Is Visible   invalid-length-password
     Element Text Should Be    invalid-length-password    Should have at least 12 characters
-
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Delivery Manager] Password Does Not Follow the Specified String Format
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
@@ -142,15 +125,10 @@ Resource        resource.robot
     # Error message is "Should contain lowercase and uppercase letters, numbers, and punctuations"
     Wait Until Element Is Visible   invalid-char-password
     Element Text Should Be    invalid-char-password    Should contain lowercase and uppercase letters, numbers, and punctuations
-
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Delivery Manager] Password Does Not Match Confirm Password
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
@@ -170,15 +148,10 @@ Resource        resource.robot
     # Error message is "Passwords do not match"
     Wait Until Element Is Visible   invalid-confirm-password
     Element Text Should Be    invalid-confirm-password    Passwords do not match
-
-    # close browser
-    [Teardown]    Close Browser
+    # reload page for next test case
+    Reload Page
 
 [Delivery Manager] Valid Registration
-    # open browser, set window size, check if in login page
-    Open Browser To Login Page
-    # click sign up button
-    Go To Sign Up
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
