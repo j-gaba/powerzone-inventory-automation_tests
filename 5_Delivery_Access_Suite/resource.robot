@@ -48,6 +48,9 @@ ${INVALID KEROSENE}       99999
 
 
 *** Keywords ***
+Go to Home
+    Click Element   //*[@href="/getHome"]
+
 Open Browser To Login Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
@@ -195,3 +198,52 @@ Confirm Delivery Edit
 
 Check Fields for Content Edit
     Element Text Should Be    edit-delivery-customer-number   \
+
+Input Name
+    [Arguments]   ${name}
+    Input Text    add-transaction-customer-name   ${name}
+
+Input Number
+    [Arguments]   ${number}
+    Input Text    add-transaction-customer-number   ${number}
+
+Input Date
+    [Arguments]   ${month}    ${day}    ${year}
+    Press Keys    add-transaction-date    ${month}    ${day}    ${year}
+
+Input Quantity
+    [Arguments]   ${gasoline}   ${p95}    ${diesel}   ${p97}    ${kerosene}
+    Input Text    add-transaction-gasoline-liters   ${gasoline}
+    Input Text    add-transaction-premium-gasoline-95-liters    ${p95}
+    Input Text    add-transaction-diesel-liters   ${diesel}
+    Input Text    add-transaction-premium-gasoline-97-liters    ${p97}
+    Input Text    add-transaction-kerosene-liters   ${kerosene}
+
+Confirm Transaction
+    Click Element   confirm-add-transaction-btn
+
+Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    Page Should Contain     TRANSACTIONS
+
+Open Add Transactions Page as Administrator
+    Open Transactions Page as Administrator
+    Click Element   //*[@href="/getAddTransaction"]
+    Add Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
+Open Transactions Page as Administrator
+    Open Browser To Login Page
+    Login Page Should Be Open
+    Wait Until Ajax Complete
+    Input Username  ${ADMIN USERNAME}
+    Input Password  ${ADMIN PASSWORD}
+    Confirm Log In
+    Home Page Should Be Open
+    Click Image   ${TRANSACTIONS BUTTON}
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
+Add Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    Page Should Contain   ADD TRANSACTION

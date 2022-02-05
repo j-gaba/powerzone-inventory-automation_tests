@@ -18,6 +18,30 @@ Resource        resource.robot
     # close browser
     [Teardown]    Close Browser
 
+[Administrator] Inputted Correct Transaction Details - Add
+    Open Add Transactions Page as Administrator
+    Input Name    Unitron
+    Input Number  09336525862
+    Input Date    28    03    2021
+    Input Quantity    ${VALID GASOLINE}   ${VALID P95}    ${VALID DIESEL}   ${VALID P97}    ${VALID KEROSENE}
+    Wait Until Element Is Enabled   confirm-add-transaction-btn
+    Element Should Be Enabled   confirm-add-transaction-btn
+    Confirm Transaction
+
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    
+    Go to Home
+
+    Click Image   ${DELIVERIES BUTTON}
+    Deliveries Page Should Be Open
+    Wait Until Ajax Complete
+
+    Page Should Contain   Unitron
+
+    [Teardown]    Close Browser
+
+
 [Administrator] Inputted Correct Delivery Details - Edit
     Edit First Delivery As Administrator
     Input Name Edit   Palshell
