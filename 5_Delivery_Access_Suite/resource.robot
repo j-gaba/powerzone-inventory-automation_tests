@@ -19,9 +19,9 @@ ${INVALID USER}         powerzone
 ${INVALID PASSWORD}     Password1234
 ${VALID PASSWORD}       Password123!
 
-${IM USERNAME}          inventory_manager
-${DM USERNAME}          delivery_manager
-${TC USERNAME}          transaction_cashier
+${IM USERNAME}          Imanager
+${DM USERNAME}          Dmanager
+${TC USERNAME}          Tcashier
 
 ${ADMIN USERNAME}       powerzoneadmin
 ${ADMIN PASSWORD}       password123
