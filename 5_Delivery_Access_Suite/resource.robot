@@ -99,6 +99,19 @@ Wait Until Ajax Complete
         Run Keyword If      ${IS AJAX COMPLETE}==True    Exit For Loop
     END
 
+Open Transactions Page as Transaction Cashier
+    Open Browser To Login Page
+    Login Page Should Be Open
+    Wait Until Ajax Complete
+    Input Username  ${TC USERNAME}
+    Input Password  ${VALID PASSWORD}
+    Confirm Log In
+    Wait Until Ajax Complete
+    Home Page Should Be Open
+    Click Image   ${TRANSACTIONS BUTTON}
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
 Open Deliveries Page as Transaction Cashier
     Open Browser To Login Page
     Login Page Should Be Open
