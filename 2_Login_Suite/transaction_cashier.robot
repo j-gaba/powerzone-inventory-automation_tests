@@ -67,7 +67,7 @@ Resource        resource.robot
     Deliveries Page Should Be Open
     Wait Until Ajax Complete
     # verify role access in page
-    Page Should Not Contain    EDIT
+    Page Should Contain    EDIT
     Page Should Contain    MORE INFO
     # return to home page using home button
     Click Element   link:Home
