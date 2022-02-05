@@ -164,6 +164,12 @@ Edit First Delivery As Administrator
     Edit Deliveries Page Should Be Open
     Wait Until Ajax Complete
 
+Edit First Delivery As Transaction Cashier
+    Open Deliveries Page as Transaction Cashier
+    Click Element   xpath=${FIRST DELIVERY EDIT PATH}
+    Edit Deliveries Page Should Be Open
+    Wait Until Ajax Complete
+
 
 Input Name Edit
     [Arguments]   ${name}
