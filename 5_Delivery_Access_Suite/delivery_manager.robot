@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Robot file belonging to the Transaction Access Suite with test cases
+Documentation   Robot file belonging to the Delivery Access Suite with test cases
 ...             for accessing delivery features for the Delivery Manager Role
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary

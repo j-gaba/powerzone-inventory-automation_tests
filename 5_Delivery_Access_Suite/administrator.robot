@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Robot file belonging to the Transaction Access Suite with test cases
+Documentation   Robot file belonging to the Delivery Access Suite with test cases
 ...             for accessing delivery features for the Inventory Manager Role
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary
@@ -18,7 +18,7 @@ Resource        resource.robot
     # close browser
     [Teardown]    Close Browser
 
-[Administrator] Inputted Correct Transaction Details - Add
+[Administrator] Inputted Correct Delivery Details - Add
     Open Add Transactions Page as Administrator
     Input Name    Unitron
     Input Number  09336525862

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Robot file belonging to the Transaction Access Suite with test cases
+Documentation   Robot file belonging to the Dekivery Access Suite with test cases
 ...             for accessing delivery features for the Transaction Cashier Role
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary
@@ -16,6 +16,29 @@ Resource        resource.robot
     More Info On Deliveries Page Should Be Open
 
     # close browser
+    [Teardown]    Close Browser
+
+[Transaction Cashier] Inputted Correct Delivery Details - Add
+    Open Add Transactions Page as Transaction Cashier
+    Input Name    UnliLiver
+    Input Number  09242214256
+    Input Date    16    09    2021
+    Input Quantity    ${VALID GASOLINE}   ${VALID P95}    ${VALID DIESEL}   ${VALID P97}    ${VALID KEROSENE}
+    Wait Until Element Is Enabled   confirm-add-transaction-btn
+    Element Should Be Enabled   confirm-add-transaction-btn
+    Confirm Transaction
+
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    
+    Go to Home
+
+    Click Image   ${DELIVERIES BUTTON}
+    Deliveries Page Should Be Open
+    Wait Until Ajax Complete
+
+    Page Should Contain   UnliLiver
+
     [Teardown]    Close Browser
 
 [Transaction Cashier] Inputted Correct Delivery Details - Edit
