@@ -253,3 +253,9 @@ Open Transactions Page as Administrator
 Add Transactions Page Should Be Open
     Wait Until Ajax Complete
     Page Should Contain   ADD TRANSACTION
+
+Open Add Transactions Page as Transaction Cashier
+    Open Transactions Page as Transaction Cashier
+    Click Element   //*[@href="/getAddTransaction"]
+    Add Transactions Page Should Be Open
+    Wait Until Ajax Complete
