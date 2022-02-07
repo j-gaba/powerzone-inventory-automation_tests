@@ -15,11 +15,11 @@ Resource        resource.robot
     # should be in the page containing detailed information on the first delivery
     More Info On Deliveries Page Should Be Open
 
-    # close browser
-    [Teardown]    Close Browser
+    # return to home
+    Click Element   link:Home
 
 [Transaction Cashier] Inputted Correct Delivery Details - Add
-    Open Add Transactions Page as Transaction Cashier
+    Add Transaction From Home
     Input Name    UnliLiver
     Input Number  09242214256
     Input Date    16    09    2021
@@ -39,10 +39,10 @@ Resource        resource.robot
 
     Page Should Contain   UnliLiver
 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Transaction Cashier] Inputted Correct Delivery Details - Edit
-    Edit First Delivery As Transaction Cashier
+    Edit First Delivery From Home
     Input Name Edit   Perly Shell
     Input Number Edit   09175548663
     Input Date Edit   19   03    2022
@@ -57,14 +57,13 @@ Resource        resource.robot
     Deliveries Page Should Be Open
     Wait Until Ajax Complete
 
-    Page Should Contain   03/19/2022
-    Page Should Contain   Perly Shell
-    Page Should Contain   In AnotherLife St.
+    Click Element   xpath=${FIRST DELIVERY PATH}
+    Confirm Edited Delivery 3
 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Transaction Cashier] Phone Number is not 10 digits - Edit
-    Edit First Delivery As Transaction Cashier
+    Edit First Delivery From Home
     Input Name Edit   Palshell
     Input Number Edit   21
     Input Date Edit   15   03    2022
@@ -73,10 +72,10 @@ Resource        resource.robot
     Input Delivery Manager Edit  Mr. DM
     Input Driver Edit  Dabus Drib Err
     Page Should Contain   Invalid phone number (should have 7 to 15 digits) 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Transaction Cashier] User attempts to input incorrect data - Edit
-    Edit First Delivery As Transaction Cashier
+    Edit First Delivery From Home
     Input Name Edit   Petshell
     Input Number Edit   abc
     Input Date Edit   de   fg    hijk

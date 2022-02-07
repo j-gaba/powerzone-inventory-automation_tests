@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation   Robot file belonging to the Registration Test Suite with test cases
-...             for valid and invalid registrations for the Transaction Cashier Role
+Documentation   Robot file belonging to the Smoke Test Suite with test cases
+...             for testing critical functionalities of the web application
 ...
 ...             This set of tests was created using keywords from the SeleniumLibrary
 Resource        resource.robot

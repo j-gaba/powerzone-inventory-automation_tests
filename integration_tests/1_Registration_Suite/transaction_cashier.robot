@@ -14,7 +14,7 @@ Resource        resource.robot
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input First Name  ${TC FIRST NAME}
@@ -37,7 +37,7 @@ Resource        resource.robot
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}
@@ -59,7 +59,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}
@@ -89,7 +89,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}
@@ -111,7 +111,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}
@@ -133,7 +133,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}
@@ -155,7 +155,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose TC role
     Select Transaction Cashier Role
     # input valid details
     Input Email  ${TC EMAIL}

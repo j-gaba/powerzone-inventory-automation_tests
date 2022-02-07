@@ -15,11 +15,11 @@ Resource        resource.robot
     # should be in the page containing detailed information on the first delivery
     More Info On Deliveries Page Should Be Open
 
-    # close browser
-    [Teardown]    Close Browser
+    # return to home
+    Click Element   link:Home
 
 [Administrator] Inputted Correct Delivery Details - Add
-    Open Add Transactions Page as Administrator
+    Add Transaction From Home
     Input Name    Unitron
     Input Number  09336525862
     Input Date    28    03    2021
@@ -39,11 +39,11 @@ Resource        resource.robot
 
     Page Should Contain   Unitron
 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 
 [Administrator] Inputted Correct Delivery Details - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Palshell
     Input Number Edit   09175548663
     Input Date Edit   15   03    2022
@@ -58,14 +58,13 @@ Resource        resource.robot
     Deliveries Page Should Be Open
     Wait Until Ajax Complete
 
-    Page Should Contain   03/15/2022
-    Page Should Contain   Palshell
-    Page Should Contain   In AnotherLife St.
+    Click Element   xpath=${FIRST DELIVERY PATH}
+    Confirm Edited Delivery 1
 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Administrator] Phone Number is not 10 digits - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Palshell
     Input Number Edit   21
     Input Date Edit   15   03    2022
@@ -74,10 +73,10 @@ Resource        resource.robot
     Input Delivery Manager Edit  Mr. DM
     Input Driver Edit  Dabus Drib Err
     Page Should Contain   Invalid phone number (should have 7 to 15 digits) 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Administrator] User attempts to input incorrect data - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Palshell
     Input Number Edit   abc
     Input Date Edit   de   fg    hijk

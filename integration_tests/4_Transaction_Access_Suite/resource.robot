@@ -13,6 +13,7 @@ ${LOGIN URL}            http://${SERVER}/
 ${IS AJAX COMPLETE}     ${EMPTY}
 
 ${FIRST TRANSACTION PATH}         /html/body/div[3]/div/div[2]/div/div/table/tbody/tr[1]/td[6]/a/img
+${SECOND TRANSACTION PATH}    /html/body/div[3]/div/div[2]/div/div/table/tbody/tr[2]/td[6]/a/img
 ${SECOND TRANSACTION EDIT PATH}    /html/body/div[3]/div/div[2]/div/div/table/tbody/tr[2]/td[7]/a/img
 
 ${INVALID USER}         powerzone
@@ -231,3 +232,41 @@ Check Fields for Content Edit
     Element Text Should Be   edit-transaction-diesel-liters   \
     Element Text Should Be   edit-transaction-premium-gasoline-97-liters   \
     Element Text Should Be   edit-transaction-kerosene-liters   \
+
+Add Transaction From Home
+    Home Page Should Be Open
+    Click Image   ${TRANSACTIONS BUTTON}
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    Click Element   //*[@href="/getAddTransaction"]
+    Add Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
+Edit Second Transaction From Home
+    Home Page Should Be Open
+    Click Image   ${TRANSACTIONS BUTTON}
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    Click Element   xpath=${SECOND TRANSACTION EDIT PATH}
+    Edit Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
+Confirm Edited Transaction 1
+    Element Attribute Value Should Be   more-info-transaction-customer-name    value   Palshell
+    Element Attribute Value Should Be   more-info-transaction-customer-number      value   9175548663
+    Element Attribute Value Should Be   more-info-transaction-date    value   2022-03-15
+    Element Attribute Value Should Be   more-info-transaction-gasoline-liters    value   ${VALID GASOLINE} 
+    Element Attribute Value Should Be   more-info-transaction-premium-gasoline-95-liters     value   ${VALID P95}
+    Element Attribute Value Should Be   more-info-transaction-diesel-liters     value   ${VALID DIESEL} 
+    Element Attribute Value Should Be   more-info-transaction-premium-gasoline-97-liters     value   ${VALID P97} 
+    Element Attribute Value Should Be   more-info-transaction-kerosene-liters     value   ${VALID KEROSENE} 
+
+Confirm Edited Transaction 2
+    Element Attribute Value Should Be   more-info-transaction-customer-name    value   Paltex
+    Element Attribute Value Should Be   more-info-transaction-customer-number      value   9175548663
+    Element Attribute Value Should Be   more-info-transaction-date    value   2022-03-15
+    Element Attribute Value Should Be   more-info-transaction-gasoline-liters    value   ${VALID GASOLINE} 
+    Element Attribute Value Should Be   more-info-transaction-premium-gasoline-95-liters     value   ${VALID P95}
+    Element Attribute Value Should Be   more-info-transaction-diesel-liters     value   ${VALID DIESEL} 
+    Element Attribute Value Should Be   more-info-transaction-premium-gasoline-97-liters     value   ${VALID P97} 
+    Element Attribute Value Should Be   more-info-transaction-kerosene-liters     value   ${VALID KEROSENE} 

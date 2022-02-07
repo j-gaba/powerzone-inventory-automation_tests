@@ -15,11 +15,11 @@ Resource        resource.robot
     # should be in the page containing detailed information on the first delivery
     More Info On Deliveries Page Should Be Open
 
-    # close browser
-    [Teardown]    Close Browser
+    # return to home
+    Click Element   link:Home
 
 [Administrator] Inputted Correct Delivery Details - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Caltron
     Input Number Edit   09565522369
     Input Date Edit   25   02    2022
@@ -34,14 +34,13 @@ Resource        resource.robot
     Deliveries Page Should Be Open
     Wait Until Ajax Complete
 
-    Page Should Contain   02/25/2022
-    Page Should Contain   Caltron
-    Page Should Contain   In SomeOtherLife St.
+    Click Element   xpath=${FIRST DELIVERY PATH}
+    Confirm Edited Delivery 2
 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Administrator] Phone Number is not 10 digits - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Caltron
     Input Number Edit   23
     Input Date Edit   25   02    2022
@@ -50,10 +49,10 @@ Resource        resource.robot
     Input Delivery Manager Edit  Mr. MD
     Input Driver Edit  Daht Ruc Drie Berr
     Page Should Contain   Invalid phone number (should have 7 to 15 digits) 
-    [Teardown]    Close Browser
+    Click Element   link:Home
 
 [Administrator] User attempts to input incorrect data - Edit
-    Edit First Delivery As Administrator
+    Edit First Delivery From Home
     Input Name Edit   Caltron
     Input Number Edit   abc
     Input Date Edit   de   fg    hijk

@@ -183,6 +183,14 @@ Edit First Delivery As Transaction Cashier
     Edit Deliveries Page Should Be Open
     Wait Until Ajax Complete
 
+Edit First Delivery From Home
+    Home Page Should Be Open
+    Click Image   ${DELIVERIES BUTTON}
+    Deliveries Page Should Be Open
+    Wait Until Ajax Complete
+    Click Element   xpath=${FIRST DELIVERY EDIT PATH}
+    Edit Deliveries Page Should Be Open
+    Wait Until Ajax Complete
 
 Input Name Edit
     [Arguments]   ${name}
@@ -263,6 +271,15 @@ Open Transactions Page as Administrator
     Transactions Page Should Be Open
     Wait Until Ajax Complete
 
+Add Transaction From Home
+    Home Page Should Be Open
+    Click Image   ${TRANSACTIONS BUTTON}
+    Transactions Page Should Be Open
+    Wait Until Ajax Complete
+    Click Element   //*[@href="/getAddTransaction"]
+    Add Transactions Page Should Be Open
+    Wait Until Ajax Complete
+
 Add Transactions Page Should Be Open
     Wait Until Ajax Complete
     Page Should Contain   ADD TRANSACTION
@@ -272,3 +289,30 @@ Open Add Transactions Page as Transaction Cashier
     Click Element   //*[@href="/getAddTransaction"]
     Add Transactions Page Should Be Open
     Wait Until Ajax Complete
+
+Confirm Edited Delivery 1
+    Element Attribute Value Should Be   more-info-delivery-customer-name    value   Palshell
+    Element Attribute Value Should Be   more-info-delivery-customer-number      value   9175548663
+    Element Attribute Value Should Be   more-info-delivery-date    value   2022-03-15
+    Element Attribute Value Should Be   more-info-delivery-warehouse    value   Somewhere 560, Ina St.
+    Element Attribute Value Should Be   more-info-delivery-dropoff     value   In AnotherLife St.
+    Element Attribute Value Should Be   more-info-delivery-manager     value   Mr. DM
+    Element Attribute Value Should Be   more-info-delivery-driver     value   Dabus Drib Err
+
+Confirm Edited Delivery 2
+    Element Attribute Value Should Be   more-info-delivery-customer-name    value   Caltron
+    Element Attribute Value Should Be   more-info-delivery-customer-number      value   9565522369
+    Element Attribute Value Should Be   more-info-delivery-date    value   2022-02-25
+    Element Attribute Value Should Be   more-info-delivery-warehouse    value   TheOneThat 560, Ina St.
+    Element Attribute Value Should Be   more-info-delivery-dropoff     value   In SomeOtherLife St.
+    Element Attribute Value Should Be   more-info-delivery-manager     value   Mr. MD
+    Element Attribute Value Should Be   more-info-delivery-driver     value   Daht Ruc Drie Berr
+
+Confirm Edited Delivery 3
+    Element Attribute Value Should Be   more-info-delivery-customer-name    value   Perly Shell
+    Element Attribute Value Should Be   more-info-delivery-customer-number      value   9175548663
+    Element Attribute Value Should Be   more-info-delivery-date    value   2022-03-19
+    Element Attribute Value Should Be   more-info-delivery-warehouse    value   Somewhere 560, Ina St.
+    Element Attribute Value Should Be   more-info-delivery-dropoff     value   In AnotherLife St.
+    Element Attribute Value Should Be   more-info-delivery-manager     value   Mr. DM
+    Element Attribute Value Should Be   more-info-delivery-driver     value   Dabus Drib Err

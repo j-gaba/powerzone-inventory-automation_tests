@@ -14,7 +14,7 @@ Resource        resource.robot
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input First Name  ${IM FIRST NAME}
@@ -37,7 +37,7 @@ Resource        resource.robot
     # should be open in sign up page
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
@@ -59,7 +59,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
@@ -89,7 +89,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
@@ -111,7 +111,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
@@ -133,7 +133,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
@@ -156,7 +156,7 @@ Resource        resource.robot
     Sign Up Page Should Be Open
     Wait Until AjaxComplete
 
-    # choose DM role
+    # choose IM role
     Select Inventory Manager Role
     # input valid details
     Input Email  ${IM EMAIL}
